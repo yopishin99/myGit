@@ -128,8 +128,10 @@ git과 github 연결하기
 
             git branch -M main
 
-            git push -u origin main
+            git push -u origin main <u를 쓰면 저절로 연결이 된다는 의미>
             하면 올라가게 됨.
+
+수정사항
 
 
 
