@@ -1,5 +1,5 @@
 git으로 버전 관리하기
-1. Local repository 만들기
+1. Local repository 만들기 (로컬저장소)
     1. cmd 혹은 terminal로 local repository로 만들고 싶은
     폴더로 이동하기
         cd 명령어를 활용하여 이동
@@ -53,16 +53,24 @@ git으로 버전 관리하기
         커밋을 하게 되면 "stage에 올라와있는 상태" 그대로 영구 저장 된다.
         (git add를 미리 해줘야 commit이 가능)
 
+
+    git commit  
+        실행하면 커밋 메시지를 입력할 수 있는 에디터가 열린다
+        이곳에다가 i를 눌러서 끼워넣기(insert) 상태로 만들고, 커밋 메시지를 작성한 후
+        다 작성이 되면 
+        :wq를 입력하고 엔터를 눌러 나온다
+
+    -m 옵션 : 메시지를 간단히 할 수 있는 옵션 
+
     git commit -m "커밋 메시지"
         커밋을 할때 작성하고 싶은 메시지를 쌍따옴표 안쪽에 써준다.
         이때, commit은 stage에 올라가 있는 상태가 영구적으로 저장된다.
 
     -a 옵션
+        git commit -ad
+            add는 자동으로 되고, 커밋메시지 작성하는 에디터 열림
         git commit -am "커밋메시지"
-        111
-
-
-
+            add도 자동 커밋메시지도 간단히 작성
 
     git status 
         git 저장소의 상태를 확인해줘
@@ -93,7 +101,40 @@ git으로 버전 관리하기
         git config user.name
         git config user.email
 
+git과 github 연결하기
+    1. github에서 내 로컬저장소와 연결한 원격저장소(repository)만들기
+        우측 상단 프로필 클릭 > your repositories > New 버튼 클릭 > 레포지토리 이름 설정 > Create repository 버튼 클릭 
     
+    2. 로컬저장소와 원격저장소 연결
+        terminal에서 
+            git remote add 원격저장소별칭 원격저장소 주소
+            (git remote add origin 깃허브 주소)
+
+        연결 완료(최초 한번만 해주면 됨)
+
+평소에 깃 허브에 업로드 하는 과정
+        수정(unstage, tracked), 새롭게 만든 파일(untracked, unstage)
+
+        add 하여 모든 수정사항 stage 상태로 만들기
+
+        commit 하여 stage에 올라간 상태를 영구 저장
+
+        push 하여 commit된 상태를 github에 업로드하기
+
+            git remote (연결 확인)
+            origin 나오면 성공
+
+            git remote -v 
+
+            git branch -M main
+
+            git push -u origin main
+            하면 올라가게 됨.
+
+
+
+    
+   
 
     
 
