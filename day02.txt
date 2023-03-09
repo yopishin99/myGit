@@ -1,0 +1,87 @@
+git으로 버전 관리하기
+1. Local repository 만들기
+    1. cmd 혹은 terminal로 local repository로 만들고 싶은
+    폴더로 이동하기
+        cd 명령어를 활용하여 이동
+        ex) cd "폴더 이름/ 폴더 이름/ 폴더 이름"
+
+        .. 은 상위 폴더를 의미한다.
+        ex) cd ../../폴더1
+        --> 현재 위치로부터 상위폴더의 상위폴더 안의 폴더 1로 이동
+
+        visual studio code terminal 활용하기
+            상단 Terminal 탭 > New terminal 
+
+        종료하기
+            termianl 창 쓰레기통 아이콘 클릭 (x버튼을 클릭하면 화면상에서만 안보일 뿐 터미널이 종료된것은 아니다.)
+
+        terminal, cmd, git bash 사용이 완료되면 잘 종료를 시켜줘야 한다. 
+
+        2. git init
+            git init 명령어를 실행하면 해당 폴더가 버전관리를 할 수 있는 폴더로 변경된다.
+            .git 이라는 폴더가 새롭게 생성이 되면 성공!
+            .git 은 숨긴 폴더로서 보통은 안보이게 설정되어 있으며 (절대로 수정하면 안된다.)
+            맥북 > command . shift 를 클릭하면 볼 수 있다.
+
+            .git 폴더 속에는 버전 관리를 위한 여러가지 폴더와 파일들이 들어 있으며
+            .git 폴더를 삭제하면 버전 관리를 할 수 있는 깃 저장소가 아닌 일반 폴더가 되어 버린다.
+            (이때는 git init을 다시 실행)
+
+            git init은 깃 저장소로 만들기 위해 최초 1회만 실행
+
+2. git stage에 수정사항 올리기
+
+    깃의 작동원리
+        깃은 논리적으로 working tree/ stage/ repository로 나누어 파일들을 관리한다.
+    
+    working tree 
+        실질적으로 내가 작업하는 작업 공간
+        작업 공간에서 새롭게 만든 파일들은 기본적으로 git이 추적하지 못하는 상태(untracked)
+        스테이지에 올라가지 않은 상태(unstage)
+    
+    git status  
+        파일을 stage에 올리는 방법 (tracked 상태로 만드는 방법)
+            git add 파일 이름
+        명령어를 사용한다.
+
+        add 명령어가 적용된 파일들은 모두 tracked 상태가 되며 stage에 올라간 상태가 된다.
+        이때 stage에 올라가 있는 파일을 수정(추가,삭제)했다면 add를 실행했을 당시와
+        다른 상태가 된다 이를 인지하고 modified 상태가 되었다고 판간하며
+        modified 된 상태는 tracked 되었지만  unstage 상태
+    
+    stage에 올라와있는 상황을 영구적으로 저장 : commit 
+        커밋을 하게 되면 "stage에 올라와있는 상태" 그대로 영구 저장 된다.
+        (git add를 미리 해줘야 commit이 가능)
+
+    git commit -m "커밋 메시지"
+        커밋을 할때 작성하고 싶은 메시지를 쌍따옴표 안쪽에 써준다.
+        이때, commit은 stage에 올라가 있는 상태가 영구적으로 저장된다.
+
+    -a 옵션
+        git commit -am "커밋메시지"
+
+
+
+
+    git status 
+        git 저장소의 상태를 확인해줘
+
+    git add 파일이름
+        해당파일을 stage에 올려줘
+        untracked(git 저장소 내에서 새롭게 만든 파일들) 파일들은 tracked된 상태로 변경되고,
+        stage에 해당 내용들이 올라간다(stage 상태가 된다)
+
+        파일 이름 자리에 *를 사용하면 모든을 의미한다. 
+        (git add *)
+
+
+    
+
+    
+
+        
+
+    
+
+        
+
